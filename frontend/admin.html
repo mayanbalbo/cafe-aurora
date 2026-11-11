@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração | Café Aurora</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="admin.js" defer></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <a class="marca" href="/">Café Aurora</a>
+        <nav>
+            <a href="/">Visualizar loja</a>
+            <button id="botao-sair" type="button" hidden>Sair</button>
+        </nav>
+    </header>
+
+    <main class="pagina-admin">
+        <section id="area-login">
+            <div class="titulo-secao">
+                <p class="subtitulo">ACESSO RESTRITO</p>
+                <h1>Área administrativa</h1>
+                <p>Entre com sua senha para gerenciar os pedidos.</p>
+            </div>
+
+            <form id="form-login">
+                <div class="campo-formulario">
+                    <label for="senha-admin">Senha administrativa</label>
+                    <input
+                        type="password"
+                        id="senha-admin"
+                        required
+                    >
+                </div>
+                <button class="botao" type="submit">Entrar</button>
+            </form>
+
+            <p id="mensagem-login" class="mensagem" role="status" hidden></p>
+        </section>
+
+        <section id="painel-admin" hidden>
+            <div class="titulo-secao">
+                <p class="subtitulo">GERENCIAMENTO</p>
+                <h1>Pedidos recebidos</h1>
+                <p>Consulte os pedidos e atualize seu andamento.</p>
+            </div>
+
+            <p id="mensagem-pedidos" class="mensagem" role="status"></p>
+            <div id="lista-pedidos"></div>
+
+            <div class="gerenciador-produtos">
+                <div class="titulo-secao">
+                    <p class="subtitulo">CARDÁPIO</p>
+                    <h2>Gerenciar produtos</h2>
+                    <p>Cadastre, edite ou altere a disponibilidade dos produtos.</p>
+                </div>
+
+                <form id="form-produto">
+                    <input type="hidden" id="produto-id">
+
+                    <div class="campo-formulario">
+                        <label for="produto-nome">Nome do produto *</label>
+                        <input type="text" id="produto-nome" maxlength="120" required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="produto-descricao">Descrição</label>
+                        <textarea id="produto-descricao" rows="3"></textarea>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="produto-preco">Preço (R$) *</label>
+                        <input
+                            type="number"
+                            id="produto-preco"
+                            min="0"
+                            max="99999999.99"
+                            step="0.01"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="produto-imagem">Endereço da imagem</label>
+                        <input
+                            type="url"
+                            id="produto-imagem"
+                            maxlength="500"
+                            placeholder="https://exemplo.com/imagem.jpg"
+                        >
+                        <small>Informe um endereço público iniciado por http:// ou https://. O campo é opcional.</small>
+                    </div>
+
+                    <div class="botoes-formulario">
+                        <button class="botao" type="submit" id="botao-salvar-produto">
+                            Cadastrar produto
+                        </button>
+
+                        <button
+                            class="botao botao-secundario"
+                            type="button"
+                            id="botao-cancelar-edicao"
+                            hidden
+                        >
+                            Cancelar edição
+                        </button>
+                    </div>
+
+                    <p id="mensagem-produto" class="mensagem" role="status" hidden></p>
+                </form>
+
+                <h3>Produtos cadastrados</h3>
+                <div id="lista-produtos-admin"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>© 2026 Café Aurora — Projeto acadêmico PIT.</p>
+    </footer>
+</body>
+</html>

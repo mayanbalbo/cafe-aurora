@@ -1,0 +1,17 @@
+# Dependências do Node.js
+node_modules/
+
+# Arquivos de configuração e senhas
+.env
+.env.*
+
+# Exceção para arquivos de exemplo
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Arquivos temporários
+.DS_Store
+Thumbs.db

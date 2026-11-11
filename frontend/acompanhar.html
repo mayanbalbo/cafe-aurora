@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompanhar pedido | Café Aurora</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="acompanhar.js" defer></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <a class="marca" href="/">Café Aurora</a>
+        <nav aria-label="Navegação principal">
+            <a href="/">Início</a>
+            <a href="/#cardapio">Cardápio</a>
+            <a href="/acompanhar.html">Acompanhar pedido</a>
+        </nav>
+    </header>
+
+    <main class="pagina-acompanhamento">
+        <div class="titulo-secao">
+            <p class="subtitulo">CUIDAMOS DO SEU PEDIDO</p>
+            <h1>Acompanhe seu pedido</h1>
+            <p>Informe os dados recebidos ao finalizar sua compra.</p>
+        </div>
+
+        <form id="form-acompanhamento">
+            <div class="campo-formulario">
+                <label for="pedido-id">Número do pedido</label>
+                <input
+                    type="number"
+                    id="pedido-id"
+                    name="pedido-id"
+                    min="1"
+                    required
+                >
+            </div>
+
+            <div class="campo-formulario">
+                <label for="email">E-mail utilizado na compra</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                >
+            </div>
+
+            <button class="botao" type="submit">
+                Consultar pedido
+            </button>
+        </form>
+
+        <p id="mensagem-consulta" class="mensagem" role="status" hidden></p>
+
+        <section id="resultado-pedido" hidden>
+            <h2>Detalhes do pedido</h2>
+            <div id="dados-pedido"></div>
+            <h3>Produtos</h3>
+            <div id="itens-pedido"></div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>© 2026 Café Aurora — Projeto acadêmico PIT.</p>
+    </footer>
+</body>
+</html>
